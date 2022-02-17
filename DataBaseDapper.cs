@@ -15,24 +15,7 @@ namespace HockeyShop1
         static string connString = "data source=.\\SQLEXPRESS; initial catalog=HockeyShop1; persist security info=true; Integrated Security=true";
         //static string connString = "Server=tcp:newtondemo50.database.windows.net,1433;Initial Catalog=DemoDB;Persist Security Info=False;User ID=Admin50;Password=1992LunkaN;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=3000";
 
-        // Shows existing products 
-        /* public static List<Product> GetAllProducts()
-         {
-             var products = new List<Product>();
-
-             var sql = "SELECT * FROM Products";
-
-             using (var connection = new SqlConnection(connString))
-             {
-                 connection.Open();
-                 products = connection.Query<Product>(sql).ToList();
-
-             }
-
-             return products;
-
-         }*/
-        // Adding a product
+        
 
         public static int AddProductAdmin(Models.Product product)
         {
@@ -78,20 +61,6 @@ namespace HockeyShop1
                 return affectedRows;
         }
 
-
-        // Updating a product price
-        /*
-        public static int UpdateProduct(int newPrice, int prouctId )
-        {
-            int affectedRows = 0;
-            var sql = $"UPDATE Products SET Price = {newPrice} WHERE Id = {prouctId}";
-            using (var connection = new SqlConnection(connString))
-            {
-                affectedRows = connection.Execute(sql);
-
-            }
-            return affectedRows;
-        }*/
 
     }
 }
